@@ -7,6 +7,14 @@ export default function Home() {
     <div className="transition-colors min-h-screen bg-neutral-200 dark:bg-neutral-800 text-black dark:text-white font-(family-name:--font-vt323) overflow-x-hidden">
       <Header />
       <main className="flex flex-col items-center justify-center my-24 w-full">
+        <section className="flex flex-col items-center justify-center  text-center h-full w-full my-12">
+          <p className="text-[6vw]">// Hola, este es mi...}</p>
+          <h1 className="text-[12vw] mb-10">{`{”_portafolio web”}`}</h1>
+          <div
+            className="bg-fixed bg-cover bg-center h-[500px] w-full"
+            style={{ backgroundImage: "url('/hero-image.jpg')" }}>
+          </div>
+        </section>
         <section className="flex flex-col items-center justify-center text-center gap-10 my-12 px-4">
           <p className="text-xl text-violet-400">(!)</p>
           <h2 className="text-4xl">{`<Proyectos>`}</h2>
@@ -186,3 +194,6 @@ export default function Home() {
     </div>
   );
 }
+
+
+
