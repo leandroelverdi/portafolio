@@ -8,7 +8,7 @@ export default function Home() {
       <Header />
       <main className="flex flex-col items-center justify-center my-24 w-full">
         <section className="flex flex-col items-center justify-center  text-center h-full w-full my-12">
-          <p className="text-[6vw]">// Hola, este es mi...}</p>
+          <p className="text-[6vw]">{`{// Hola, este es mi...}`}</p>
           <h1 className="text-[12vw] mb-10">{`{”_portafolio web”}`}</h1>
           <div
             className="bg-fixed bg-cover bg-center h-[500px] w-full"
