@@ -1,24 +1,24 @@
-'use client';
+'use client'
 
+import { useState, useEffect } from "react";
+import Loader from "@/components/Loader";
 import Image from "next/image";
 import FadeOnScroll from "@/components/FadeOnScroll";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useState, useEffect } from "react";
-import Loader from "@/components/Loader";
 
 export default function Home() {
-  const [isMounted, setIsMounted] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) {
-    return (
-      <Loader />
-    );
-  }
-
+      setMounted(true);
+    }, []);
+  
+    if (!mounted) {
+      return (
+        <Loader />
+      );
+    }
   return (
     <div className="transition-colors min-h-screen bg-neutral-200 dark:bg-neutral-800 text-black dark:text-white font-(family-name:--font-vt323) overflow-x-hidden">
       <Header />
@@ -51,7 +51,7 @@ export default function Home() {
                 alt="Proyecto 1"
                 width={600}
                 height={400}
-                className="max-h-120 object-contain"
+                className="max-h-120 w-auto object-contain"
               />
               <h3 className="text-2xl">{`{ sneakers app }`}</h3>
               <p className="text-xl text-cyan-800 dark:text-yellow-200 text-center">
@@ -67,7 +67,7 @@ export default function Home() {
                 alt="Proyecto 2"
                 width={600}
                 height={400}
-                className="max-h-120 object-contain"
+                className="max-h-120 w-auto object-contain"
               />
               <h3 className="text-2xl">{`{ hotel JS }`}</h3>
               <p className="text-xl text-cyan-800 dark:text-yellow-200 text-center">
@@ -82,7 +82,7 @@ export default function Home() {
                 alt="Proyecto 3"
                 width={600}
                 height={400}
-                className="max-h-120 object-contain"
+                className="max-h-120 w-auto object-contain"
               />
               <h3 className="text-2xl">{`{ 9z fans }`}</h3>
               <p className="text-xl text-cyan-800 dark:text-yellow-200 text-center">
