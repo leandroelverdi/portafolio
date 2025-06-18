@@ -11,30 +11,33 @@ export default function Home() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-      setMounted(true);
-    }, []);
-  
-    if (!mounted) {
-      return (
-        <Loader />
-      );
-    }
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <Loader />
+    );
+  }
   return (
     <div className="transition-colors min-h-screen bg-neutral-200 dark:bg-neutral-800 text-black dark:text-white font-(family-name:--font-vt323) overflow-x-hidden">
       <Header />
       <main className="flex flex-col items-center justify-center my-24 w-full">
-        <section className="flex flex-col items-center justify-center text-center h-full w-full my-12">
+
+        {/* Presentación */}
+        <section className="flex flex-col items-center justify-center text-center h-screen w-full my-12">
           <FadeOnScroll>
-            <p className="text-[6vw]">{`// Hola, este es mi...`}</p>
-            <h1 className="text-[12vw] mb-10">{`{”_portafolio web”}`}</h1>
+            <p className="text-[6vw] md:text-2xl">{`// Hola, este es mi...`}</p>
+            <h1 className="text-[12vw] mb-10 md:text-8xl">{`{”_portafolio web”}`}</h1>
           </FadeOnScroll>
           <div
-            className="bg-fixed bg-cover bg-center h-[500px] w-full"
+            className="bg-fixed bg-cover bg-center h-full w-full"
             style={{ backgroundImage: "url('/hero-image.jpg')" }}>
           </div>
         </section>
 
-        <section className="flex flex-col items-center justify-center text-center gap-10 my-12 px-4 w-screen">
+        {/* Proyectos */}
+        <section className="flex flex-col items-center justify-center text-center gap-8 my-12 px-4 w-screen">
           <FadeOnScroll>
             <p className="text-xl text-violet-400">(!)</p>
             <h2 className="text-4xl animate-fade-down">{`<Proyectos>`}</h2>
@@ -42,16 +45,15 @@ export default function Home() {
               ...estos son los mejores proyectos que realicé hasta el momento
             </p>
           </FadeOnScroll>
-
-          <FadeOnScroll className="flex overflow-x-auto snap-x snap-mandatory w-full h-full">
+          <FadeOnScroll className="grid grid-flow-col auto-cols-[100vw] snap-x snap-mandatory w-full h-full overflow-x-auto scrollbar-hide md:auto-cols-fr md:overflow-x-visible md:snap-none">
             {/* Proyecto 1 */}
-            <div className="flex-shrink-0 snap-start w-screen flex flex-col items-center gap-4 px-8 box-border">
+            <div className="flex flex-col items-center gap-4 box-border">
               <Image
                 src="/sneakers_react-scaled.webp"
                 alt="Proyecto 1"
                 width={600}
                 height={400}
-                className="max-h-120 w-auto object-contain"
+                className="h-120 min-h-120 w-auto object-contain"
               />
               <h3 className="text-2xl">{`{ sneakers app }`}</h3>
               <p className="text-xl text-cyan-800 dark:text-yellow-200 text-center">
@@ -60,14 +62,14 @@ export default function Home() {
             </div>
 
             {/* Proyecto 2 */}
-            <div className="flex-shrink-0 snap-start w-screen flex flex-col items-center gap-4 px-8 box-border">
+            <div className="flex flex-col items-center gap-4 box-border">
 
               <Image
                 src="/hotel-JS.webp"
                 alt="Proyecto 2"
                 width={600}
                 height={400}
-                className="max-h-120 w-auto object-contain"
+                className="h-120 min-h-120 w-auto object-contain"
               />
               <h3 className="text-2xl">{`{ hotel JS }`}</h3>
               <p className="text-xl text-cyan-800 dark:text-yellow-200 text-center">
@@ -76,13 +78,13 @@ export default function Home() {
             </div>
 
             {/* Proyecto 3 */}
-            <div className="flex-shrink-0 snap-start w-screen flex flex-col items-center gap-4 px-8 box-border">
+            <div className="flex flex-col items-center gap-4 box-border">
               <Image
                 src="/9z.webp"
                 alt="Proyecto 3"
                 width={600}
                 height={400}
-                className="max-h-120 w-auto object-contain"
+                className="h-120 min-h-120 w-auto object-contain"
               />
               <h3 className="text-2xl">{`{ 9z fans }`}</h3>
               <p className="text-xl text-cyan-800 dark:text-yellow-200 text-center">
@@ -92,9 +94,8 @@ export default function Home() {
           </FadeOnScroll>
         </section>
 
-
-
-        <section className="flex flex-col items-center justify-center gap-10 px-4 my-12 px-4">
+        {/* Tecnologias */}
+        <section className="flex flex-col items-center justify-center text-center gap-10 my-12 px-4 w-screen">
           <FadeOnScroll className="text-center">
             <p className="text-xl text-violet-400">{`{#}`}</p>
             <h2 className="text-4xl">{`<tecnologias>`}</h2>
@@ -207,7 +208,8 @@ export default function Home() {
           </FadeOnScroll>
         </section>
 
-        <section className="flex flex-col items-center justify-center  gap-10 px-4 my-12 px-4">
+        {/* Sobre mi */}
+        <section className="flex flex-col items-center justify-center text-center gap-10 my-12 px-4 w-screen">
           <FadeOnScroll className="text-center">
             <p className="text-xl text-violet-400">{`{/}`}</p>
             <h2 className="text-4xl">{`<sobre_mi>`}</h2>
